@@ -45,10 +45,22 @@ set nowrap
 " 在行和段开始处使用制表符
 set smarttab
 
+set list
+set listchars=tab:>-,trail:@
+"set listchars=tab:»\ ,trail:·,extends:»,precedes:«,eol:¶
+
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+"match tab /\t/
+highlight tab ctermbg=DarkGreen guibg=DarkGreen
+"match WarningMsg /\s\+$/
+"
+"au BufWritePre * :%s/\s\+$//e
+
 "sub witd
 nmap OD <<cr>
 "add witd
-nmap OC ><cr> 
+nmap OC ><cr>
 "sub high
 nmap OB +<cr>
 "add high
@@ -97,7 +109,7 @@ let g:T_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 ":cs add /home/pete/Eben/T3/trunk/kernel_imx/cscope.out
 
 "T4
-"set tags+=/home/pete/Eben/T4/t4_r10.1/kernel_imx/mytags
+set tags+=/home/pete/T4/kernel_imx/tags
 ":cs add /home/pete/Eben/T4/t4_r10.1/kernel_imx/cscope.out
 
 "T3_T4
@@ -109,4 +121,4 @@ let g:T_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 "set tags=/home/pete/Eben/T3/trunk/selftest/src/tags
 
-set tags+=/home/pete/T4/bootable/bootloader/uboot-imx/tags
+"set tags+=/home/pete/T4/bootable/bootloader/uboot-imx/tags

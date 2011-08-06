@@ -56,6 +56,8 @@ highlight tab ctermbg=DarkGreen guibg=DarkGreen
 "match WarningMsg /\s\+$/
 "
 "au BufWritePre * :%s/\s\+$//e
+"ctrl + a can clean tab or space
+nmap ^A :%s/\s\+$//e<cr>
 
 "sub witd
 nmap OD <<cr>

@@ -8,8 +8,6 @@ let g:winManagerWindowLayout='FileExplorer|TagList'
 
 nmap wm :WMToggle<cr>
 
-nmap <F6> :cn<cr>
-nmap <F7> :cp<cr>
 
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -52,21 +50,31 @@ set listchars=tab:>-,trail:@
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 "match tab /\t/
-highlight tab ctermbg=DarkGreen guibg=DarkGreen
-"match WarningMsg /\s\+$/
-"
+"highlight WarningMsg ctermbg=DarkGreen guibg=DarkGreen
+"match WarningMsg /\t/
+
 "au BufWritePre * :%s/\s\+$//e
 "ctrl + a can clean tab or space
-nmap ^A :%s/\s\+$//e<cr>
+nmap  :%s/\s\+$//e<cr>
 
 "sub witd
-nmap OD <<cr>
+"nmap OD <<cr>
 "add witd
-nmap OC ><cr>
+"nmap OC ><cr>
 "sub high
-nmap OB +<cr>
+"nmap OB +<cr>
 "add high
-nmap OA -<cr>
+"nmap OA -<cr>
+
+"sub witd
+nmap [D <<cr>
+"add witd
+nmap [C ><cr>
+"sub high
+nmap [B +<cr>
+"add high
+nmap [A -<cr>
+
 
 let &termencoding=&encoding
 set fileencodings=utf-8,gbk,ucs-bom,cp936
@@ -77,17 +85,29 @@ set cmdheight=2
 
 "let Tlist_Use_Right_Window=1
 
-":cs add /home/hang/MyFile/8180/ffmpeg-0.4.8/cscope.out /home/hang/MyFile/8180/ffmpeg-0.4.8
-":cs add /home/hang/MyFile/8180/ffmpeg-0.4.8/cscope.out /home/hang/MyFile/8180/ffmpeg-0.4.8
-":cs add /home/nishizawa23/MyFile/vlc/ffmpeg/cscope.out /home/nishizawa23/MyFile/vlc/ffmpeg
+nmap <F6> :cn<cr>
+nmap <F7> :cp<cr>
+
+"shift+ctrl+_
 :set cscopequickfix=s-,c-,d-,i-,t-,e-
+nmap <F6> :cn<cr>
+nmap <F7> :cp<cr>
+"查找C语言符号，即查找函数名、宏、枚举值等出现的地方
 nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+"查找函数、宏、枚举等定义的位置，类似ctags所提供的功能
 nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+"查找调用本函数的函数         <F6> <F7> can up down and  :cw can call the
+"windows :ccl can close the windows
 nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+"查找指定的字符串
 nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+"查找egrep模式，相当于egrep功能，但查找速度快多了
 nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+"查找并打开文件，类似vim的find功能
 nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"查找包含本文件的文件
 nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR><CR>
+"查找本函数调用的函数
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 set dictionary=/home/nishizawa23/.vim/dictionary/c_dictionary.txt
@@ -111,7 +131,7 @@ let g:T_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 ":cs add /home/pete/Eben/T3/trunk/kernel_imx/cscope.out
 
 "T4
-set tags+=/home/pete/T4/kernel_imx/tags
+"set tags+=/home/pete/T4/kernel_imx/tags
 ":cs add /home/pete/Eben/T4/t4_r10.1/kernel_imx/cscope.out
 
 "T3_T4
@@ -124,3 +144,10 @@ set tags+=/home/pete/T4/kernel_imx/tags
 "set tags=/home/pete/Eben/T3/trunk/selftest/src/tags
 
 "set tags+=/home/pete/T4/bootable/bootloader/uboot-imx/tags
+"set tags+=/home/pete/myandroid/bootable/bootloader/uboot-imx/ctags
+"set tags+=/home/pete/T3/trunk/bootable/bootloader/uboot-imx/ctags
+"set tags+=/home/pete/myandroid/bootable/bootloader/uboot-imx/ctags
+":cs add /home/pete/myandroid/bootable/bootloader/uboot-imx/cscope.out
+":cs add /home/pete/T3/trunk/bootable/bootloader/uboot-imx/cscope.out
+set tags+=/home/pete/myandroid/kernel_imx/tags
+:cs add /home/pete/myandroid/kernel_imx/cscope.out

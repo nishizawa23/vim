@@ -1,7 +1,3 @@
-"set tags=/home/nishizawa23/MyFile/8180/opt/crosstool/arm-linux/gcc-3.4.4-glibc-2.3.5/arm-linux/arm-linux/include/tags
-"set tags+=/home/nishizawa23/MyFile/8180/ffmpeg-0.4.8/tags
-
-
 set helplang=cn
 
 let g:winManagerWindowLayout='FileExplorer|TagList'
@@ -12,6 +8,7 @@ nmap wm :WMToggle<cr>
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 
+set ignorecase
 "set autoindent
 "set shiftwidth=4
 "set cindent
@@ -67,13 +64,13 @@ nmap  :%s/\s\+$//e<cr>
 "nmap OA -<cr>
 
 "sub witd
-nmap [D <<cr>
+nmap [D <
 "add witd
-nmap [C ><cr>
+nmap [C >
 "sub high
-nmap [B +<cr>
+nmap [B +
 "add high
-nmap [A -<cr>
+nmap [A -
 
 
 let &termencoding=&encoding

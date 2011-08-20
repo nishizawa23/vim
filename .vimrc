@@ -78,7 +78,7 @@ set fileencodings=utf-8,gbk,ucs-bom,cp936
 
 set ruler
 
-set cmdheight=2
+set cmdheight=1
 
 "let Tlist_Use_Right_Window=1
 
@@ -122,6 +122,25 @@ let g:T_AUTHOR_EMAIL = "nishizawa23@gmail.com"
 let g:T_AUTHOR_WEBSITE = "http://www.nishizawa23.com"
 
 let g:T_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
+
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 "T3
 "set tags=/home/pete/Eben/T3/trunk/kernel_imx/mytags

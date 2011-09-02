@@ -1,3 +1,6 @@
+set t_Co=256
+:colorscheme test2
+
 set helplang=cn
 
 let g:winManagerWindowLayout='FileExplorer|TagList'
@@ -165,5 +168,6 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 "set tags+=/home/pete/myandroid/bootable/bootloader/uboot-imx/ctags
 ":cs add /home/pete/myandroid/bootable/bootloader/uboot-imx/cscope.out
 ":cs add /home/pete/T3/trunk/bootable/bootloader/uboot-imx/cscope.out
+"
 set tags+=/home/pete/myandroid/kernel_imx/tags
 :cs add /home/pete/myandroid/kernel_imx/cscope.out

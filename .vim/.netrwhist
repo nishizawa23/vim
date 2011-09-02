@@ -1,10 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/pete/Git/linux_driver/07/globalmem'
-let g:netrw_dirhist_2='/'
-let g:netrw_dirhist_3='/home/pete/Eben/T4/git_r10.2/kernel_imx/arch/arm/mach-mx5'
-let g:netrw_dirhist_4='/home/pete/Eben/T4/git_r10.2/kernel_imx/arch/arm/plat-mxc/include/mach'
-let g:netrw_dirhist_5='/home/pete/Git/linux_driver/11/DMA'
-let g:netrw_dirhist_6='/home/pete/share_hxh/linuxdriver_code_tool/12/touch_lcd/char'
-let g:netrw_dirhist_7='/home/pete/Eben/T3/trunk/device/eben/apps/Launcher'
-let g:netrw_dirhist_8='/home/pete/Eben/T3/trunk/bootable/bootloader/uboot-imx/lib_arm'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/pete/git/linux_driver/init'
+let g:netrw_dirhist_2='/home/pete/git/linux_driver/homekey'
+let g:netrw_dirhist_3='/home/pete/git/config/bash'
+let g:netrw_dirhist_4='/home/pete/git/config/bash/scripts'
+let g:netrw_dirhist_5='/home/pete/T4_r10.3/r10.3_t4/build'
+let g:netrw_dirhist_6='/home/pete/myandroid/kernel_imx/Documentation/input'

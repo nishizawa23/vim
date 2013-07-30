@@ -100,3 +100,12 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 
 let g:winManagerWindowLayout='FileExplorer|TagList'
 nmap wm :WMToggle<cr>
+
+"sub witd
+nmap <Left> <C-w><
+"add witd
+nmap <Right> <C-w>>
+"sub high
+nmap <Up> <C-w>+
+"add high
+nmap <Down> <C-w>-

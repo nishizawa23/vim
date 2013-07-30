@@ -31,15 +31,15 @@ set noexpandtab "不要用空格代替制表符
 filetype plugin indent on 
 "hotkey
 
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {<CR>}<Esc>O
-autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap } <c-r>=CloseBracket()<CR>
-inoremap " <c-r>=QuoteDelim('"')<CR>
-inoremap ' <c-r>=QuoteDelim("'")<CR>
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {<CR>}<Esc>O
+"autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
+"inoremap ) <c-r>=ClosePair(')')<CR>
+"inoremap ] <c-r>=ClosePair(']')<CR>
+"inoremap } <c-r>=CloseBracket()<CR>
+"inoremap " <c-r>=QuoteDelim('"')<CR>
+"inoremap ' <c-r>=QuoteDelim("'")<CR>
 
 function ClosePair(char)
 	if getline('.')[col('.')- 1] == a:char
@@ -109,3 +109,11 @@ nmap <Right> <C-w>>
 nmap <Up> <C-w>+
 "add high
 nmap <Down> <C-w>-
+
+"plugin Auto Pairs
+let g:AutoPairsFlyMode = 0 
+let g:AutoPairsShortcutBackInsert = '<M-b>' 
+
+set tags+=/home/pete/Android/JB/tags
+cscope add /home/pete/Android/JB/cscope.out
+set tags+=/home/pete/Android/kernel/goldfish/tags

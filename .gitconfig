@@ -1,0 +1,8 @@
+[user]
+	name = nishizawa23
+	email = nishizawa23@gmail.com
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	editor = vim

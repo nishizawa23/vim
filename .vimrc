@@ -12,6 +12,8 @@ set nocompatible "diff for vi
 
 syntax on
 
+colorscheme desert
+
 "code style
 "
 set autoindent
@@ -114,6 +116,6 @@ nmap <Down> <C-w>-
 let g:AutoPairsFlyMode = 0 
 let g:AutoPairsShortcutBackInsert = '<M-b>' 
 
-set tags+=/home/pete/Android/JB/tags
-cscope add /home/pete/Android/JB/cscope.out
-set tags+=/home/pete/Android/kernel/goldfish/tags
+"set tags+=/home/pete/Android/JB/tags
+"cscope add /home/pete/Android/JB/cscope.out
+"set tags+=/home/pete/Android/kernel/goldfish/tags

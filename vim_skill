@@ -6,3 +6,4 @@
 	:help key-notation / key-codes /keycodes
 4.<silent>:是指执行键绑定时不在命令行上回显
 	http://www.douban.com/group/topic/10866937/
+5.<leader>:在vimrc里面设置，键盘为 '\'

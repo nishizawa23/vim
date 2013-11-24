@@ -1,8 +1,20 @@
-[user]
-	name = nishizawa23
-	email = nishizawa23@gmail.com
 [color]
 	ui = true
+[user]
+	name = pete
+	email = nishizawa23@gmail.com
 [core]
-	autocrlf = input
 	editor = vim
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+	sh = show
+	wh = whatchanged
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	mg = merge
+	glog = log --pretty=oneline --graph
+	ls = log --pretty=oneline --abbrev-commit --decorate
+	in = instaweb --httpd apache2

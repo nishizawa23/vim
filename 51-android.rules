@@ -1,0 +1,22 @@
+# adb protocol on crespo/crespo4g (Nexus S)
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", MODE="0600", OWNER="pete"
+
+# fastboot protocol on crespo/crespo4g (Nexus S)
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", MODE="0600", OWNER="pete"
+
+# adb protocol on EBEN (T5)
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9025", MODE="0600", OWNER="pete"
+
+# fastboot protocol on EBEN (T5)
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9023", MODE="0600", OWNER="pete"
+
+# kindle fire hd
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", MODE="0600", OWNER="pete"
+
+#hitown
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d00d", MODE="0600", OWNER="pete"

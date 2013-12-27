@@ -4,7 +4,7 @@
 echo "Generating Lookupfile filenametags..."
 
 echo -e "!_TAG_FILE_SORTED\t2\t/2=foldcase/" > filenametags
-find . -not -regex '.*\.\(png\|gif\)' -type f -printf "%f\t%p\t1\n" | \
+find . -not -regex '.*\.\(png\|gif\|o\)' -type f -printf "%f\t%p\t1\n" | \
         sort -f >> filenametags
 # add the below line to ~/.bashrc or /etc/bash.bashrc
 #let g:LookupFile_TagExpr='"./filenametags"'
@@ -14,6 +14,12 @@ echo "Finding files for cscope..."
 
 find . \( \
 -path "./prebuilt" -o \
+-path "./sdk" -o \
+-path "./ndk" -o \
+-path "./emmc_program_3140" -o \
+-path "./debug-tools" -o \
+-path "./cts" -o \
+-path "./development" -o \
 -path "./out" -o \
 -path "*/.git" -o \
 -path "*/.svn" -o \
@@ -54,5 +60,7 @@ ctags -R --langmap=c++:+.inl -h +.inl \
          --exclude="\.repo" \
          --exclude="\.\/prebuilt" \
          --exclude="\.\/out" \
-         ./
+		 -L cscope.files \
+		 -f androidtags
+         
 echo "Done"

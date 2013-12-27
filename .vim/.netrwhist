@@ -1,8 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/pete/git/linux_driver/init'
-let g:netrw_dirhist_2='/home/pete/git/linux_driver/homekey'
-let g:netrw_dirhist_3='/home/pete/git/config/bash'
-let g:netrw_dirhist_4='/home/pete/git/config/bash/scripts'
-let g:netrw_dirhist_5='/home/pete/T4_r10.3/r10.3_t4/build'
-let g:netrw_dirhist_6='/home/pete/myandroid/kernel_imx/Documentation/input'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/pete/.vim/after/after'
+let g:netrw_dirhist_2='/home/pete/.vim/after/after/ftplugin'
+let g:netrw_dirhist_3='/home/pete/.vim/dictionary'
+let g:netrw_dirhist_4='/home/pete/Android/hitown/android/android235_oemlhc/packages/apps/Phone/src/com/android/phone'
+let g:netrw_dirhist_5='/home/pete/Android/hitown/android/android235_oemlhc/development'

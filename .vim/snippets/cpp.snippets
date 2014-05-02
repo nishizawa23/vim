@@ -28,21 +28,3 @@ snippet cl
 	private:
 		${3:/* data */}
 	};
-# cout
-snippet co
-	cout << ${1} << endl;
-#return
-snippet re
-	return ${1:0};
-#function templates
-snippet te
-	template <class Any>
-	${1:void} ${2:fun}(Any , Any }){
-		${5:something}
-	}
-#explicit specialization
-snippet tem
-	template <> 
-	${1:void} ${2:fun}<${3:int}>(${4:int} , ${6:int}){
-		${8:something}
-	}

@@ -15,6 +15,9 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	mg = merge
-	glog = log --pretty=oneline --graph
-	ls = log --pretty=oneline --abbrev-commit --decorate
 	in = instaweb --httpd apache2
+	ls = log --pretty=oneline --abbrev-commit --decorate
+	glog = log --pretty=oneline --graph
+	plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
+	tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

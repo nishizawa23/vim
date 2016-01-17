@@ -4,6 +4,11 @@ syntax enable
 "colorscheme solarized
 colorscheme desert
 
+"highlight Pmenu ctermbg=blue
+"highlight PmenuSel ctermbg=green
+"highlight PmenuSbar ctermbg=green
+"highlight PmenuThumb ctermbg=green
+
 """"""""""""""""""""""""""""""
 " template_loader.vim setting
 """"""""""""""""""""""""""""""
@@ -71,8 +76,8 @@ nmap lf :LUTags<cr>
 nmap lb :LUBufs<cr>
 "lw = LUWalk
 nmap lw :LUWalk<cr>
-"选择文件上下ctrl+n/ctrl+p
-let g:LookupFile_TagExpr='"/Volumes/android/JB/filenametags"'
+"选择文件上下ctrl+n/ctrl+p ctrl+u快捷键清空
+let g:LookupFile_TagExpr='"/Volumes/PetePalm/AOSP/android44/filenametags"'
 
 """"""""""""""""""""""""""""""
 " cscopse setting
@@ -97,5 +102,5 @@ nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 """"""""""""""""""""""""""""""
 " ctags setting
 """"""""""""""""""""""""""""""
-set tags+=/Volumes/android/JB/androidtags
-cscope add /Volumes/android/JB/cscope.out
+set tags+=/Volumes/PetePalm/AOSP/android44/androidtags
+cscope add /Volumes/PetePalm/AOSP/android44/cscope.out

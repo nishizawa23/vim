@@ -1,65 +1,62 @@
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'flazz/vim-colorschemes'
+
+Plug 'fholgado/minibufexpl.vim'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'vim-scripts/taglist.vim', { 'on':  'Tlist' }
+Plug 'vim-scripts/winmanager'
+
+Plug 'vim-scripts/lookupfile'
+Plug 'vim-scripts/genutils'
+
+" Multiple Plug commands can be written in a single line using | separators
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'Shougo/neocomplete.vim'
+
+call plug#end()
+
 syntax enable
-"set background=light
-"set background=dark
-"colorscheme solarized
 colorscheme desert
-
-"highlight Pmenu ctermbg=blue
-"highlight PmenuSel ctermbg=green
-"highlight PmenuSbar ctermbg=green
-"highlight PmenuThumb ctermbg=green
-
-""""""""""""""""""""""""""""""
-" template_loader.vim setting
-""""""""""""""""""""""""""""""
-let g:template_load = 1
-
-let g:template_tags_replacing = 1
-
-let g:T_AUTHOR = "nishizawa23"
-
-let g:T_AUTHOR_EMAIL = "nishizawa23@gmail.com"
-
-let g:T_AUTHOR_WEBSITE = "http://nishizawa23.github.io"
-
-let g:T_DATE_FORMAT = "%Y-%m-%d"
-
 
 """"""""""""""""""""""""""""""
 " taglist setting
 """"""""""""""""""""""""""""""
 let Tlist_Ctags_Cmd = '~/Git/ctags-5.8/ctags'
 let Tlist_Use_Right_Window = 1
-let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
-"let Tlist_Exit_OnlyWindow = 1         "如果taglist窗口是最后一个窗口，则退出vim
-"let Tlist_Auto_Open=1
-
+let Tlist_Show_One_File = 1 "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Auto_Open=1
 
 """"""""""""""""""""""""""""""
 " winManager setting
-""""""""""""""""""""""""""""""
-"let g:winManagerWindowLayout='FileExplorer|TagList'
+"""""""""""""""""""""""""""""" 
 let g:winManagerWindowLayout='FileExplorer'
 nmap wm :WMToggle<cr>:Tlist<cr>
+" let g:winManagerWindowLayout='NERDTree'
+" nmap wm :NERDTreeToggle<cr>:Tlist<cr> 
 
-
-""""""""""""""""""""""""""""""
-" minibuffer setting
-""""""""""""""""""""""""""""""
+ """"""""""""""""""""""""""""""
+ " minibuffer setting
+ """"""""""""""""""""""""""""""
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 
-""""""""""""""""""""""""""""""
-" window size change setting
-""""""""""""""""""""""""""""""
-"sub wide
-nmap <Left> <C-w><
-"add wide
-nmap <Right> <C-w>>
-"sub high
-nmap <Up> <C-w>+
-"add high
-nmap <Down> <C-w>-
+noremap <C-J>     <C-W>j
+noremap <C-K>     <C-W>k
+noremap <C-H>     <C-W>h
+noremap <C-L>     <C-W>l 
 
 """"""""""""""""""""""""""""""
 " LookupFilee setting
@@ -104,3 +101,32 @@ nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 """"""""""""""""""""""""""""""
 set tags+=/Volumes/PetePalm/AOSP/android44/androidtags
 cscope add /Volumes/PetePalm/AOSP/android44/cscope.out
+
+" This is the default extra key bindings
+let g:fzf_action = {
+   \ 'ctrl-t': 'tab split',
+   \ 'ctrl-x': 'split',
+   \ 'ctrl-v': 'vsplit' }
+
+"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+     \ 'default' : '',
+     \ 'vimshell' : $HOME.'/.vimshell_hist',
+     \ 'scheme' : $HOME.'/.gosh_completions'
+     \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] ='\h\w*'

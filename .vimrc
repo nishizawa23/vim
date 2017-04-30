@@ -20,15 +20,103 @@ Plug 'vim-scripts/genutils'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 
 Plug 'Shougo/neocomplete.vim'
+
+" 自动括号补全
+Plug 'Raimondi/delimitMate'
+
+Plug 'majutsushi/tagbar'
+
+" 快速加减注释
+" <Leader>ci 以每行一个 /* */ 注释选中行(选中区域所在行)，再输入则取消注释
+" <Leader>cm 以一个 /* */ 注释选中行(选中区域所在行)，再输入则称重复注释
+" <Leader>cc 以每行一个 /* */ 注释选中行或区域，再输入则称重复注释
+" <Leader>cu 取消选中区域(行)的注释，选中区域(行)内至少有一个 /* */
+" <Leader>ca 在/*...*/与//这两种注释方式中切换（其它语言可能不一样了）
+" <Leader>cA 行尾注释
+Plug 'scrooloose/nerdcommenter'
+
+" 括号匹配高亮
+Plug 'luochen1990/rainbow'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'vim-syntastic/syntastic'
+
+Plug 'artur-shaik/vim-javacomplete2'
 
 call plug#end()
 
 syntax enable
+syntax on
 colorscheme desert
+set ignorecase "搜索忽略大小写"
+set enc=utf-8  "编码设置"
+
+""""""""""""""""""""""""""""""
+" vim-javacomplete2 setting
+""""""""""""""""""""""""""""""
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+
+""""""""""""""""""""""""""""""
+" syntastic setting
+""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+""""""""""""""""""""""""""""""
+" airline setting
+""""""""""""""""""""""""""""""
+set laststatus=2
+let g:airline_theme='solarized'
+
+""""""""""""""""""""""""""""""
+" rainbow setting
+""""""""""""""""""""""""""""""
+let g:rainbow_active = 1
+
+""""""""""""""""""""""""""""""
+" nerdcommenter setting
+""""""""""""""""""""""""""""""
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+""""""""""""""""""""""""""""""
+" tagbar setting
+""""""""""""""""""""""""""""""
+let g:tagbar_ctags_bin = '~/Git/ctags-5.8/ctags'
+let g:tagbar_autofocus = 1
+nmap <F3> :TagbarToggle<CR>
 
 """"""""""""""""""""""""""""""
 " taglist setting
@@ -43,7 +131,8 @@ let Tlist_Auto_Open=1
 " winManager setting
 """""""""""""""""""""""""""""" 
 let g:winManagerWindowLayout='FileExplorer'
-nmap wm :WMToggle<cr>:Tlist<cr>
+" nmap wm :WMToggle<cr>:Tlist<cr>
+nmap wm :WMToggle<cr>:TagbarToggle<cr>
 " let g:winManagerWindowLayout='NERDTree'
 " nmap wm :NERDTreeToggle<cr>:Tlist<cr> 
 

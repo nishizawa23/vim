@@ -20,8 +20,8 @@ Plug 'vim-scripts/genutils'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'Shougo/neocomplete.vim'
 
@@ -46,8 +46,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 Plug 'artur-shaik/vim-javacomplete2'
+
+Plug 'rking/ag.vim'
+Plug 'Chun-Yang/vim-action-ag'
+
+" Plug 'airblade/vim-gitgutter'
+" Plug 'junegunn/limelight.vim'
+" Plug 'godlygeek/tabular'
+" Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -56,6 +65,24 @@ syntax on
 colorscheme desert
 set ignorecase "搜索忽略大小写"
 set enc=utf-8  "编码设置"
+
+""""""""""""""""""""""""""""""
+" ale setting
+""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+let &runtimepath.=',~/.vim/plugged/ale'
+filetype plugin on
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+
+""""""""""""""""""""""""""""""
+" ag setting
+""""""""""""""""""""""""""""""
+let g:ag_prg="ag --vimgrep"
+let g:ag_working_path_mode="r"
 
 """"""""""""""""""""""""""""""
 " vim-javacomplete2 setting
@@ -67,19 +94,19 @@ imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
 """"""""""""""""""""""""""""""
 " syntastic setting
 """"""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["ruby", "php"],
-    \ "passive_filetypes": ["puppet"] }
+" let g:syntastic_mode_map = {
+"     \ "mode": "active",
+"     \ "active_filetypes": ["ruby", "php"],
+"     \ "passive_filetypes": ["puppet"] }
 
 """"""""""""""""""""""""""""""
 " airline setting
@@ -211,6 +238,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {

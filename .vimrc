@@ -53,6 +53,8 @@ Plug 'artur-shaik/vim-javacomplete2'
 Plug 'rking/ag.vim'
 Plug 'Chun-Yang/vim-action-ag'
 
+Plug 'dyng/ctrlsf.vim'
+
 " Plug 'airblade/vim-gitgutter'
 " Plug 'junegunn/limelight.vim'
 " Plug 'godlygeek/tabular'
@@ -65,6 +67,8 @@ syntax on
 colorscheme desert
 set ignorecase "搜索忽略大小写"
 set enc=utf-8  "编码设置"
+" if you want paste in vim
+" set paste
 
 """"""""""""""""""""""""""""""
 " ale setting

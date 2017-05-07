@@ -67,8 +67,10 @@ syntax on
 colorscheme desert
 set ignorecase "搜索忽略大小写"
 set enc=utf-8  "编码设置"
+inoremap jj <esc>
 " if you want paste in vim
 " set paste
+"
 
 """"""""""""""""""""""""""""""
 " ale setting
@@ -81,6 +83,7 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_enabled = 1
 
 """"""""""""""""""""""""""""""
 " ag setting

@@ -68,6 +68,7 @@ colorscheme desert
 set ignorecase "搜索忽略大小写"
 set enc=utf-8  "编码设置"
 inoremap jj <esc>
+set backspace=indent,eol,start
 " if you want paste in vim
 " set paste
 "

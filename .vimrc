@@ -59,6 +59,7 @@ Plug 'dyng/ctrlsf.vim'
 " Plug 'junegunn/limelight.vim'
 " Plug 'godlygeek/tabular'
 " Plug 'Valloric/YouCompleteMe'
+" Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 

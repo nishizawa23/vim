@@ -31,6 +31,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 
 " 快速加减注释
+" <Leader> is \
 " <Leader>ci 以每行一个 /* */ 注释选中行(选中区域所在行)，再输入则取消注释
 " <Leader>cm 以一个 /* */ 注释选中行(选中区域所在行)，再输入则称重复注释
 " <Leader>cc 以每行一个 /* */ 注释选中行或区域，再输入则称重复注释

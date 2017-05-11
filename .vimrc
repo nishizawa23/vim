@@ -156,14 +156,20 @@ let g:NERDTrimTrailingWhitespace = 1
 """"""""""""""""""""""""""""""
 " tagbar setting
 """"""""""""""""""""""""""""""
+if has('mac')
 let g:tagbar_ctags_bin = '~/Git/ctags-5.8/ctags'
+endif
+
 let g:tagbar_autofocus = 1
 nmap <F3> :TagbarToggle<CR>
 
 """"""""""""""""""""""""""""""
 " taglist setting
 """"""""""""""""""""""""""""""
+if has('mac')
 let Tlist_Ctags_Cmd = '~/Git/ctags-5.8/ctags'
+endif
+
 let Tlist_Use_Right_Window = 1
 let Tlist_Show_One_File = 1 "不同时显示多个文件的tag，只显示当前文件的
 let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim

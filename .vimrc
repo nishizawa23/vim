@@ -60,7 +60,7 @@ Plug 'dyng/ctrlsf.vim'
 " Plug 'junegunn/limelight.vim'
 " Plug 'godlygeek/tabular'
 " Plug 'Valloric/YouCompleteMe'
-" Plug 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -74,6 +74,14 @@ set backspace=indent,eol,start
 " if you want paste in vim
 " set paste
 "
+""""""""""""""""""""""""""""""
+" vim-autoformat setting
+""""""""""""""""""""""""""""""
+noremap <F3> :Autoformat<CR>
+au BufWrite * :Autoformat
+" astyle for C#, C++, C and Java
+" pip install --user yapf for Python
+" pip install jsbeautifier for Javascript and JSON
 
 """"""""""""""""""""""""""""""
 " ale setting
@@ -107,7 +115,7 @@ imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-" 
+"
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
@@ -157,7 +165,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " tagbar setting
 """"""""""""""""""""""""""""""
 if has('mac')
-let g:tagbar_ctags_bin = '~/Git/ctags-5.8/ctags'
+	let g:tagbar_ctags_bin = '~/Git/ctags-5.8/ctags'
 endif
 
 let g:tagbar_autofocus = 1
@@ -167,7 +175,7 @@ nmap <F3> :TagbarToggle<CR>
 " taglist setting
 """"""""""""""""""""""""""""""
 if has('mac')
-let Tlist_Ctags_Cmd = '~/Git/ctags-5.8/ctags'
+	let Tlist_Ctags_Cmd = '~/Git/ctags-5.8/ctags'
 endif
 
 let Tlist_Use_Right_Window = 1
@@ -177,23 +185,23 @@ let Tlist_Auto_Open=1
 
 """"""""""""""""""""""""""""""
 " winManager setting
-"""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""
 let g:winManagerWindowLayout='FileExplorer'
 " nmap wm :WMToggle<cr>:Tlist<cr>
 nmap wm :WMToggle<cr>:TagbarToggle<cr>
 " let g:winManagerWindowLayout='NERDTree'
-" nmap wm :NERDTreeToggle<cr>:Tlist<cr> 
+" nmap wm :NERDTreeToggle<cr>:Tlist<cr>
 
- """"""""""""""""""""""""""""""
- " minibuffer setting
- """"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+" minibuffer setting
+""""""""""""""""""""""""""""""
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 
 noremap <C-J>     <C-W>j
 noremap <C-K>     <C-W>k
 noremap <C-H>     <C-W>h
-noremap <C-L>     <C-W>l 
+noremap <C-L>     <C-W>l
 
 """"""""""""""""""""""""""""""
 " LookupFilee setting
@@ -241,9 +249,9 @@ cscope add /Volumes/PetePalm/AOSP/android44/cscope.out
 
 " This is the default extra key bindings
 let g:fzf_action = {
-   \ 'ctrl-t': 'tab split',
-   \ 'ctrl-x': 'split',
-   \ 'ctrl-v': 'vsplit' }
+			\ 'ctrl-t': 'tab split',
+			\ 'ctrl-x': 'split',
+			\ 'ctrl-v': 'vsplit' }
 
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
@@ -258,13 +266,13 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-     \ 'default' : '',
-     \ 'vimshell' : $HOME.'/.vimshell_hist',
-     \ 'scheme' : $HOME.'/.gosh_completions'
-     \ }
+			\ 'default' : '',
+			\ 'vimshell' : $HOME.'/.vimshell_hist',
+			\ 'scheme' : $HOME.'/.gosh_completions'
+			\ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-let g:neocomplete#keyword_patterns = {}
+	let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] ='\h\w*'

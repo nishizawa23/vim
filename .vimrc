@@ -60,6 +60,7 @@ Plug 'dyng/ctrlsf.vim'
 " Plug 'junegunn/limelight.vim'
 " Plug 'godlygeek/tabular'
 " Plug 'Valloric/YouCompleteMe'
+" https://github.com/Chiel92/vim-autoformat
 Plug 'Chiel92/vim-autoformat'
 
 call plug#end()

@@ -78,11 +78,20 @@ set backspace=indent,eol,start
 """"""""""""""""""""""""""""""
 " vim-autoformat setting
 """"""""""""""""""""""""""""""
-noremap <F3> :Autoformat<CR>
-au BufWrite * :Autoformat
+noremap <F2> :Autoformat<CR>
+" au BufWrite * :Autoformat
 " astyle for C#, C++, C and Java
 " pip install --user yapf for Python
 " pip install jsbeautifier for Javascript and JSON
+"let g:autoformat_autoindent = 0
+"let g:autoformat_retab = 0
+"let g:autoformat_remove_trailing_spaces = 0
+" autocmd FileType javascript setlocal equalprg=js-beautify\ -f\ -\ -s\ 2\ -B
+" autocmd FileType html setlocal equalprg=html-beautify\ -f\ -\ -s\ 2\ -B
+" autocmd FileType css setlocal equalprg=css-beautify\ -f\ -\ -s\ 2\ -B
+" tab 4个空格键
+set ts=4
+set expandtab
 
 """"""""""""""""""""""""""""""
 " ale setting
@@ -264,6 +273,12 @@ let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+au FileType php setl ofu=phpcomplete#CompletePHP
+au FileType ruby,eruby setl ofu=rubycomplete#Complete
+au FileType html,xhtml setl ofu=htmlcomplete#CompleteTags
+au FileType c setl ofu=ccomplete#CompleteCpp
+au FileType xml setl omnifunc=xmlcomplete#CompleteTags
+au FileType css setl ofu=csscomplete#CompleteCSS
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {

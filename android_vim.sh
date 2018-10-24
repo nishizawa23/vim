@@ -16,7 +16,7 @@ sed -i '$ afind \\' vim-android-source.sh
 
 sed "s/<sourceFolder url=\"file:\/\/\$MODULE_DIR\$\\//\"/g;s/ isTestSource=\"false\"\/>/ \\\/g" tmp.1 > tmp.3
 
-sed "/\"\.\/cts\//d;/\"\.\/developers\//d;/\"\.\/developers\//d;/\"\.\/development\//d;/\"\.\/toolchain\//d;/\"\.\/prebuilts\//d;/\"\.\/toolchain\//d;/\"\.\/tools\//d;/\"\.\/sdk\//d" tmp.3 >> vim-android-source.sh
+sed "/\"\.\/cts\//d;/\"\.\/developers\//d;/\"\.\/developers\//d;/\"\.\/development\//d;/\"\.\/toolchain\//d;/\"\.\/prebuilts\//d;/\"\.\/toolchain\//d;/\"\.\/tools\//d;/\"\.\/sdk\//d;/\"\.\/out\//d" tmp.3 >> vim-android-source.sh
 
 sed -i '$ a-type f -not -type l -printf "%f\\t%p\\t1\\n" | sort -f >> filenametags' vim-android-source.sh
 
@@ -24,7 +24,7 @@ sed -i '$ a#cscope for android and qualcomm modem' vim-android-source.sh
 sed -i '$ aecho "Finding files for cscope..."' vim-android-source.sh
 
 sed -i '$ afind \\' vim-android-source.sh
-sed "/\"\.\/cts\//d;/\"\.\/developers\//d;/\"\.\/developers\//d;/\"\.\/development\//d;/\"\.\/toolchain\//d;/\"\.\/prebuilts\//d;/\"\.\/toolchain\//d;/\"\.\/tools\//d;/\"\.\/sdk\//d" tmp.3 >> vim-android-source.sh
+sed "/\"\.\/cts\//d;/\"\.\/developers\//d;/\"\.\/developers\//d;/\"\.\/development\//d;/\"\.\/toolchain\//d;/\"\.\/prebuilts\//d;/\"\.\/toolchain\//d;/\"\.\/tools\//d;/\"\.\/sdk\//d;/\"\.\/out\//d" tmp.3 >> vim-android-source.sh
 sed -i '$ a-type f -not -type l \\' vim-android-source.sh
 sed -i '$ a-iname "*.[chsx]" -print -o \\\
 -iname "*.hh" -print -o \\\
